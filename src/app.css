@@ -1,0 +1,348 @@
+/*@import 'tailwindcss';*/
+
+@import '@fontsource-variable/pixelify-sans'; /* Supports weights 400-700 */
+
+:root{
+	/* #region ----------- Colors ----------- */
+	--neu0: #ffffff;
+	--neu1: #f6f6f6;
+	--neu2: #dddddd;
+	--neu3: #b4b4b4;
+	--neu4: #999999;
+	--neu5: #878787;
+	--neu6: #6e6e6e;
+	--neu7: #595959;
+	--neu8: #404040;
+	--neu9: #292929;
+	--neu10: #000000;
+
+    --teal: #C0F5E0;
+    --teal2: #04D583;
+    --yellow: #FFFD9A;
+    --purple1: #7263DE;
+    --purple2: #6E4FEB;
+    --pink: #FF5BC1;
+
+    --gradient-1: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 31%, rgba(243,243,245,1) 42%, rgba(243,243,245,1) 51%, rgba(249,250,250,1) 71%, rgba(255,255,255,1) 100%);
+	--gradient-2: linear-gradient(0deg, rgba(120,113,103,1) 0%, rgba(224,216,207,1) 100%);
+    --bg-gradient: linear-gradient(180deg, rgba(231,238,253,1) 0%, rgba(230,251,243,1) 50%, rgba(255,214,239,1) 100%);
+
+    /* #endregion -------------------------- */
+
+	/* #region ----------- ◊ Dimensional · LET THESE BE IMMUTABLE ◊ ----------- */
+	--d1: 0.0625rem; /* 1px ( @ 16px ) */
+	--d2: 0.125rem; /* 2px */
+	--d3: 0.1875rem; /* 3px ...and so on */
+	--d4: 0.25rem;
+	--d5: 0.3125rem;
+	--d6: 0.375rem;
+	--d7: 0.4375rem;
+	--d8: 0.5rem;
+	--d9: 0.5625rem;
+	--d10: 0.625rem;
+	--d11: 0.6875rem;
+	--d12: 0.75rem;
+	--d13: 0.8125rem;
+	--d14: 0.875rem;
+	--d15: 0.9375rem;
+	--d16: 1rem;
+	--d17: 1.0625rem;
+	--d18: 1.125rem;
+	--d19: 1.1875rem;
+	--d20: 1.25rem;
+	--d21: 1.3125rem;
+	--d22: 1.375rem;
+	--d23: 1.4375rem;
+	--d24: 1.5rem;
+	--d25: 1.5625rem;
+	--d26: 1.625rem;
+	--d27: 1.6875rem;
+	--d28: 1.75rem;
+	--d29: 1.8125rem;
+	--d30: 1.875rem;
+
+	--d32: 2rem;
+	--d34: 2.125rem;
+	--d36: 2.25rem;
+	--d40: 2.5rem;
+	--d42: 2.625rem;
+	--d44: 2.75rem;
+	--d46: 2.875rem;
+	--d48: 3rem;
+	--d50: 3.125rem;
+	--d52: 3.25rem;
+	--d56: 3.5rem;
+	--d60: 3.75rem;
+	--d64: 4rem;
+	--d68: 4.25rem;
+	--d72: 4.5rem;
+	--d76: 4.75rem;
+	--d80: 5rem;
+	--d100: 6.25rem;
+	--d120: 7.5rem;
+    --d240: 15rem;
+    --d480: 30rem;
+
+    /* #endregion ----------- ◊ ◊ ◊ ----------- */
+
+	/* #region ----------- Font Weights ----------- */
+	--xxlite: 100; /* Thin - for  */
+	--xlite: 200; /* Extralight - for  */
+	--lite: 300; /* Light - for  */
+	--reg: 400; /* Regular - for  */
+	--med: 500; /* Medium - for  */
+	--mbold: 600; /* Semibold -  */
+	--bold: 700; /* Bold -  */
+	--xbold: 800; /* ExtraBold - for  */
+	--black: 900; /* Black - for  */
+	--xblack: 1000; /* Extrablack - for  */
+    /* #endregion --------------------------------- */
+
+    --site-bg: #F1F1F1;
+    --text-color: var(--neu9);
+    --shad-1: #F8F8F8;
+    --shad-2: #909090;
+    --shad-3: var(--neu9);
+}
+
+/* #region ----------- CUSTOM UTILITY CLASSES ----------- */
+
+/* #region ----- Positioning, Layout, Spacing ------- */
+.f {display: flex;}
+.in-f {display: inline-flex;}
+.f-col {display: flex; flex-direction: column;}
+.f-row {display: flex; flex-direction: row;}
+
+/* Alignment Along X Axis (Horizontal) */
+.align-s {justify-content: flex-start;}
+.align-e {justify-content: flex-end;}
+.align-c {justify-content: center;}
+.align-a {justify-content: space-between;}
+
+/* Alignment Along Y Axis (Vertical) */
+.alignx-s {align-items: flex-start;}
+.alignx-e {align-items: flex-end;}
+.alignx-c {align-items: center;}
+.alignx-s {align-items: stretch;}
+.alignx-b {align-items: baseline;}
+
+/* Gaps ( must pair with flex ) */
+.gap-4 {gap: var(--d4, .25rem);}
+.gap-6 {gap: var(--d6, .375rem);}
+.gap-8 {gap: var(--d8, .500rem);}
+.gap-10 {gap: var(--d10, .625rem);}
+.gap-12 {gap: var(--d12, .75rem);}
+.gap-16 {gap: var(--d16, 1.00rem);}
+.gap-20 {gap: var(--d20, 1.25rem);}
+.gap-24 {gap: var(--d24, 1.50rem);}
+.gap-28 {gap: var(--d28, 1.75rem);}
+.gap-32 {gap: var(--d32, 2.00rem);}
+.gap-36 {gap: var(--d36, 2.25rem);}
+.gap-40 {gap: var(--d40, 2.50rem);}
+
+.w-a {width: auto;}
+.w-8 {width: var(--d8, .5rem);}
+.w-16 {width: var(--d16, 1rem);}
+.w-24 {width: var(--d24, 1.5rem);}
+.w-32 {width: var(--d32, 2rem);}
+.w-48 {width: var(--d48, 3rem);}
+.w-52 {width: var(--d52, 3.25rem);}
+.w-64 {width: var(--d64, 4rem);}
+.w-p20 {width: 20%;}
+.w-p30 {width: 30%;}
+.w-p40 {width: 40%;}
+.w-p50 {width: 50%;}
+.w-p50 {width: 60%;}
+.w-p50 {width: 70%;}
+.w-p50 {width: 80%;}
+.w-p50 {width: 90%;}
+.w-p100 {width: 100%;}
+
+.h-p100 {height: 100%;}
+.h-p50 {height: 90%;}
+.h-p50 {height: 80%;}
+.h-p50 {height: 70%;}
+.h-p50 {height: 60%;}
+.h-p50 {height: 50%;}
+.h-p40 {height: 40%;}
+.h-p30 {height: 30%;}
+.h-p20 {height: 20%;}
+.h-a {height: auto;}
+
+/* Text Alignment */
+.text-c {text-align: center;}
+.text-l {text-align: left;}
+.text-r {text-align: right;}
+
+/* margin right */
+.mgr-4 {margin-right: var(--d4, .25rem);}
+.mgr-6 {margin-right: var(--d6, .375rem);}
+.mgr-8 {margin-right: var(--d8, .500rem);}
+.mgr-16 {margin-right: var(--d16, 1.00rem);}
+.mgr-20 {margin-right: var(--d20, 1.25rem);}
+.mgr-24 {margin-right: var(--d24, 1.50rem);}
+.mgr-28 {margin-right: var(--d28, 1.75rem);}
+.mgr-32 {margin-right: var(--d32, 2.00rem);}
+.mgr-36 {margin-right: var(--d36), 2.25rem;}
+
+/* margin left */
+.mgl-4 {margin-left: var(--d4, .25rem);}
+.mgl-6 {margin-left: var(--d6, .375rem);}
+.mgl-8 {margin-left: var(--d8, .500rem);}
+.mgl-16 {margin-left: var(--d16, 1.00rem);}
+.mgl-20 {margin-left: var(--d20, 1.25rem);}
+.mgl-24 {margin-left: var(--d24, 1.50rem);}
+.mgl-28 {margin-left: var(--d28, 1.75rem);}
+.mgl-32 {margin-left: var(--d32, 2.00rem);}
+.mgl-36 {margin-left: var(--d36, 2.25rem);}
+
+/* margin top */
+.mgt-4 {margin-top: var(--d4, .25rem);}
+.mgt-6 {margin-top: var(--d6, .375rem);}
+.mgt-8 {margin-top: var(--d8, .500rem);}
+.mgt-16 {margin-top: var(--d16, 1.00rem);}
+.mgt-20 {margin-top: var(--d20, 1.25rem);}
+.mgt-24 {margin-top: var(--d24, 1.50rem);}
+.mgt-28 {margin-top: var(--d28, 1.75rem);}
+.mgt-32 {margin-top: var(--d32, 2.00rem);}
+.mgt-36 {margin-top: var(--d36, 2.25rem);}
+.mgt-64 {margin-top: var(--d64, 4rem);}
+
+/* margin bottom */
+.mgb-4 {margin-bottom: var(--d4, .25rem);}
+.mgb-6 {margin-bottom: var(--d6, .375rem);}
+.mgb-8 {margin-bottom: var(--d8, .500rem);}
+.mgb-16 {margin-bottom: var(--d16, 1.00rem);}
+.mgb-20 {margin-bottom: var(--d20, 1.25rem);}
+.mgb-24 {margin-bottom: var(--d24, 1.50rem);}
+.mgb-28 {margin-bottom: var(--d28, 1.75rem);}
+.mgb-32 {margin-bottom: var(--d32, 2.00rem);}
+.mgb-36 {margin-bottom: var(--d36, 2.25rem);}
+.mgb-36 {margin-bottom: var(--d36, 2.25rem);}
+.mgb-64 {margin-bottom: var(--d64, 4rem);}
+
+/* padding right */
+.padr-4 {padding-right: var(--d4, .25rem);}
+.padr-6 {padding-right: var(--d6, .375rem);}
+.padr-8 {padding-right: var(--d8, .500rem);}
+.padr-16 {padding-right: var(--d16, 1.00rem);}
+.padr-20 {padding-right: var(--d20, 1.25rem);}
+.padr-24 {padding-right: var(--d24, 1.50rem);}
+.padr-28 {padding-right: var(--d28, 1.75rem);}
+.padr-32 {padding-right: var(--d32, 2.00rem);}
+.padr-36 {padding-right: var(--d36), 2.25rem;}
+
+/* padding left */
+.padl-4 {padding-left: var(--d4, .25rem);}
+.padl-6 {padding-left: var(--d6, .375rem);}
+.padl-8 {padding-left: var(--d8, .500rem);}
+.padl-16 {padding-left: var(--d16, 1.00rem);}
+.padl-20 {padding-left: var(--d20, 1.25rem);}
+.padl-24 {padding-left: var(--d24, 1.50rem);}
+.padl-28 {padding-left: var(--d28, 1.75rem);}
+.padl-32 {padding-left: var(--d32, 2.00rem);}
+.padl-36 {padding-left: var(--d36, 2.25rem);}
+
+/* padding top */
+.padt-4 {padding-top: var(--d4, .25rem);}
+.padt-6 {padding-top: var(--d6, .375rem);}
+.padt-8 {padding-top: var(--d8, .500rem);}
+.padt-16 {padding-top: var(--d16, 1.00rem);}
+.padt-20 {padding-top: var(--d20, 1.25rem);}
+.padt-24 {padding-top: var(--d24, 1.50rem);}
+.padt-28 {padding-top: var(--d28, 1.75rem);}
+.padt-32 {padding-top: var(--d32, 2.00rem);}
+.padt-36 {padding-top: var(--d36, 2.25rem);}
+
+/* padding bottom */
+.padb-4 {padding-bottom: var(--d4, .25rem);}
+.padb-6 {padding-bottom: var(--d6, .375rem);}
+.padb-8 {padding-bottom: var(--d8, .500rem);}
+.padb-16 {padding-bottom: var(--d16, 1.00rem);}
+.padb-20 {padding-bottom: var(--d20, 1.25rem);}
+.padb-24 {padding-bottom: var(--d24, 1.50rem);}
+.padb-28 {padding-bottom: var(--d28, 1.75rem);}
+.padb-32 {padding-bottom: var(--d32, 2.00rem);}
+.padb-36 {padding-bottom: var(--d36, 2.25rem);}
+
+/* padding top & bottom */
+.pady-4 {padding: var(--d4, .25rem) 0;}
+.pady-6 {padding: var(--d6, .375rem) 0;}
+.pady-8 {padding: var(--d8, .500rem) 0;}
+.pady-16 {padding: var(--d16, 1.00rem) 0;}
+.pady-20 {padding: var(--d20, 1.25rem) 0;}
+.pady-24 {padding: var(--d24, 1.50rem) 0;}
+.pady-28 {padding: var(--d28, 1.75rem) 0;}
+.pady-32 {padding: var(--d32, 2.00rem) 0;}
+.pady-36 {padding: var(--d36, 2.25rem) 0;}
+
+/* padding left & right */
+.padx-4 {padding: 0 var(--d4, .25rem);}
+.padx-6 {padding: 0 var(--d6, .375rem);}
+.padx-8 {padding: 0 var(--d8, .500rem);}
+.padx-16 {padding: 0 var(--d16, 1.00rem);}
+.padx-20 {padding: 0 var(--d20, 1.25rem);}
+.padx-24 {padding: 0 var(--d24, 1.50rem);}
+.padx-28 {padding: 0 var(--d28, 1.75rem);}
+.padx-32 {padding: 0 var(--d32, 2.00rem);}
+.padx-36 {padding: 0 var(--d36, 2.25rem);}
+
+/* padding all */
+.pad-4 {padding: var(--d4, .25rem);}
+.pad-6 {padding: var(--d6, .375rem);}
+.pad-8 {padding: var(--d8, .500rem);}
+.pad-16 {padding: var(--d16, 1.00rem);}
+.pad-20 {padding: var(--d20, 1.25rem);}
+.pad-24 {padding: var(--d24, 1.50rem);}
+.pad-28 {padding: var(--d28, 1.75rem);}
+.pad-32 {padding: var(--d32, 2.00rem);}
+.pad-36 {padding: var(--d36), 2.25rem;}
+
+.text-red {color: red;}
+.text-pink {color: var(--pink);}
+.text-blue {color: blue;}
+.gray {filter: grayscale(100%);}
+
+/* No Padding or Margin */
+.nopm {padding: 0;margin: 0;
+}
+/* #endregion ------------------------------------------ */
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* Remove the spinner for Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove the spinner for Firefox */
+input[type="number"] {
+    appearance: textfield;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	background: var(--bg-gradient);
+}
+
+
+body {
+    font-family: 'Pixelify Sans Variable', system-ui;
+  }
